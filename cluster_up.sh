@@ -13,7 +13,7 @@ do
     node="$nodename$j"
     echo "Checking $node"
     vmstate=$(multipass info $node | grep State | awk '{print $2}')
-        if [ $vmstate = "Running" ]
+        if [[ $vmstate = "Running" ]]
         then
             echo "$node is up and running"
             ipaddress=$(multipass info $node | grep IPv4 | awk '{print $2}')
